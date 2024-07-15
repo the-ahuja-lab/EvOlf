@@ -5,7 +5,7 @@ from myTrainParams import *            # Contains the code for training and test
 
 # define the file paths for saving and loading
 weights_file_path = f"../weights"
-test_text_file_path = f'../text/test/01_HMDB/'
+test_text_file_path = f'../text/test/'
 test_key_embedding_file_path = f'../embeddings/test/ligand/'
 test_lock_embedding_file_path = f'../embeddings/test/receptor/'
 test_concat_embedding_file_path = f'../embeddings/test/super_embed/'
@@ -204,4 +204,4 @@ model.eval()
 test_data = LigandReceptorDataset(np.array(test_X)[:, 0].tolist(), np.array(test_X)[:, 1].tolist(), test_y)  
 test_loader = DataLoader(test_data,  batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn) 
 
-_, _ = testModel(model, test_loader, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, f'02_HMDB_ASGPCRs')
+_, _ = testModel(model, test_loader, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, f'testData')
