@@ -13,7 +13,6 @@ test_concat_embedding_file_path = f'../embeddings/test/super_embed/'
 # define the input file path
 mypath = "../data/02_HMDB/"
 recpath = "../data/05_HMDB_ASGPCRs/"
-onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 # load the ligand feature files
 ligs_g2v = pd.read_csv(mypath+"07_HMDB_Graph2Vec_Final.csv")
@@ -27,13 +26,6 @@ recs_bfd = pd.read_csv(recpath+"07_ASGPCRs_ProtBFD_Final.csv")
 recs_t5 = pd.read_csv(recpath+"07_ASGPCRs_ProtT5_Final.csv")
 recs_mf = pd.read_csv(recpath+"07_ASGPCRs_MathFeature_Final.csv")
 recs_r = pd.read_csv(recpath+"07_ASGPCRs_ProtR_Final.csv")
-
-
-
-best_epoch = 84
-model = MyModel().to(device)
-model.load_state_dict(torch.load(f"{weights_file_path}/epoch_{best_epoch}.pt"))
-model.eval()
 
 # load the main data files
 main_data = pd.read_csv(recpath+"01_HMDB_ASGPCRs_testData.csv")
@@ -203,6 +195,11 @@ for i in range(n):
   test_y.append(-1)
   test_X.append(my_list)
 
+# load the trained model
+best_epoch = 84
+model = MyModel().to(device)
+model.load_state_dict(torch.load(f"{weights_file_path}/epoch_{best_epoch}.pt"))
+model.eval()
 
 test_data = LigandReceptorDataset(np.array(test_X)[:, 0].tolist(), np.array(test_X)[:, 1].tolist(), test_y)  
 test_loader = DataLoader(test_data,  batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn) 
