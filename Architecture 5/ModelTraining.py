@@ -25,20 +25,19 @@ def worker_init_fn(worker_id):
 dataType = "comb" # comb, evolf, glass
 dataSubType = "all" # all, human
 outputDir = f'{dataType}_{dataSubType}'
-inputPath = f'../../../../all_data/processedData/MainModel/SingleDataset'
 
 """
 Loading all the required datasets based on the model
 """
-file_path = f'{inputPath}/{dataType}/{dataSubType}/train.pkl'
+file_path = f'../train.pkl'
 with open(file_path, 'rb') as file:
     dataTrain = pickle.load(file)
     
-file_path = f'{inputPath}/{dataType}/{dataSubType}/{outputDir}_val.pkl'
+file_path = f'../comb_all_val.pkl'
 with open(file_path, 'rb') as file:
     dataVal = pickle.load(file)
 
-file_path = f'{inputPath}/{dataType}/{dataSubType}/comb_all_test.pkl'
+file_path = f'../comb_all_test.pkl'
 with open(file_path, 'rb') as file:
     dataTest_comb_all = pickle.load(file)
 
@@ -58,30 +57,28 @@ model = MyModel().to(device)
 Setting all file paths to save information
 """                                          
 
-weights_file_path = f"../weights/{outputDir}"
-train_text_file_path = f'../text/{outputDir}/train/'
-val_text_file_path = f'../text/{outputDir}/val/'
-test_text_file_path = f'../text/{outputDir}/test/'
+weights_file_path = f"../weights/"
+train_text_file_path = f'../text/train/'
+val_text_file_path = f'../text/val/'
+test_text_file_path = f'../text/test/'
 
-train_key_embedding_file_path = f'../embeddings/ligand/{outputDir}/train/'
-train_lock_embedding_file_path = f'../embeddings/receptor/{outputDir}/train/'
-train_concat_embedding_file_path = f'../embeddings/super_embed/{outputDir}/train/'
+train_key_embedding_file_path = f'../embeddings/ligand/train/'
+train_lock_embedding_file_path = f'../embeddings/receptor/train/'
+train_concat_embedding_file_path = f'../embeddings/super_embed/train/'
 
-val_key_embedding_file_path = f'../embeddings/ligand/{outputDir}/val/'
-val_lock_embedding_file_path = f'../embeddings/receptor/{outputDir}/val/'
-val_concat_embedding_file_path = f'../embeddings/super_embed/{outputDir}/val/'
+val_key_embedding_file_path = f'../embeddings/ligand/val/'
+val_lock_embedding_file_path = f'../embeddings/receptor/val/'
+val_concat_embedding_file_path = f'../embeddings/super_embed/val/'
 
-test_key_embedding_file_path = f'../embeddings/ligand/{outputDir}/test/'
-test_lock_embedding_file_path = f'../embeddings/receptor/{outputDir}/test/'
-test_concat_embedding_file_path = f'../embeddings/super_embed/{outputDir}/test/'
+test_key_embedding_file_path = f'../embeddings/ligand/test/'
+test_lock_embedding_file_path = f'../embeddings/receptor/test/'
+test_concat_embedding_file_path = f'../embeddings/super_embed/test/'
 
 model.train()
 model, train_list, val_list, best_epoch, best_val_acc, loss_train, loss_val, acc_train, acc_val = trainModel(model, train_loader, val_loader, "",
             weights_file_path, train_text_file_path, val_text_file_path, test_text_file_path, 
             train_key_embedding_file_path, train_lock_embedding_file_path, train_concat_embedding_file_path, 
             val_key_embedding_file_path, val_lock_embedding_file_path, val_concat_embedding_file_path)
-
-
 
 
 print(f"{outputDir} best epoch:", best_epoch)
@@ -94,14 +91,14 @@ Making plots
 plt.plot(loss_train, label = "Train Loss",color='red')
 plt.plot(loss_val, label = "Val Loss",color='green')
 plt.title("Loss Curve")
-plt.savefig(f'../figures/{outputDir}/Loss Curve.pdf', format="pdf", bbox_inches="tight") 
+plt.savefig(f'../figures/Loss Curve.pdf', format="pdf", bbox_inches="tight") 
 plt.legend()
 plt.show()
 
 plt.plot(acc_train, label = "Train Acc",color='red')
 plt.plot(acc_val, label = "Val Acc",color='green')
 plt.title("Accuracy Curve")
-plt.savefig(f'../figures/{outputDir}/Accuracy Curve.pdf', format="pdf", bbox_inches="tight") 
+plt.savefig(f'../figures/Accuracy Curve.pdf', format="pdf", bbox_inches="tight") 
 plt.legend()
 plt.show()
 
