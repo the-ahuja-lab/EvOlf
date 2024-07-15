@@ -11,24 +11,23 @@ test_lock_embedding_file_path = f'../embeddings/test/receptor/'
 test_concat_embedding_file_path = f'../embeddings/test/super_embed/'
 
 # define the input file path
-mypath = "../data/02_HMDB/"
-recpath = "../data/05_HMDB_ASGPCRs/"
+datapath = "../UnseenData/"
 
 # load the ligand feature files
-ligs_g2v = pd.read_csv(mypath+"07_HMDB_Graph2Vec_Final.csv")
-ligs_sig = pd.read_csv(mypath+"07_HMDB_Signaturizer_Final.csv")
-ligs_mord = pd.read_csv(mypath+"07_HMDB_Mordred_Final.csv")
-ligs_m2v = pd.read_csv(mypath+"07_HMDB_Mol2Vec_Final.csv")
-ligs_cb = pd.read_csv(mypath+"07_HMDB_ChemBERTa_Final.csv")
+ligs_g2v = pd.read_csv(datapath+"Graph2Vec_Final.csv")
+ligs_sig = pd.read_csv(datapath+"Signaturizer_Final.csv")
+ligs_mord = pd.read_csv(datapath+"Mordred_Final.csv")
+ligs_m2v = pd.read_csv(datapath+"Mol2Vec_Final.csv")
+ligs_cb = pd.read_csv(datapath+"ChemBERTa_Final.csv")
 
 # load the receptor feature files
-recs_bfd = pd.read_csv(recpath+"07_ASGPCRs_ProtBFD_Final.csv")
-recs_t5 = pd.read_csv(recpath+"07_ASGPCRs_ProtT5_Final.csv")
-recs_mf = pd.read_csv(recpath+"07_ASGPCRs_MathFeature_Final.csv")
-recs_r = pd.read_csv(recpath+"07_ASGPCRs_ProtR_Final.csv")
+recs_bfd = pd.read_csv(datapath+"ProtBFD_Final.csv")
+recs_t5 = pd.read_csv(datapath+"ProtT5_Final.csv")
+recs_mf = pd.read_csv(datapath+"MathFeature_Final.csv")
+recs_r = pd.read_csv(datapath+"ProtR_Final.csv")
 
 # load the main data files
-main_data = pd.read_csv(recpath+"01_HMDB_ASGPCRs_testData.csv")
+main_data = pd.read_csv(datapath+"unseenData.csv")
 main_data = main_data[["IDs","Ligand_ID","Receptor_ID"]]
 
 # Create a mapping from main data to define the sort order
