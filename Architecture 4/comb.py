@@ -1,5 +1,5 @@
 from architecture import *             # Contains the model architecture
-from myDataset import *            # Necessary to define the dataset
+from myDataset import *                # Necessary to define the dataset
 from myImports import *                # Contains all import files
 from myTrainParams import *            # Contains the code for training and testing a model
 
@@ -34,7 +34,6 @@ print(f'Code start time:', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
 """
 Loading all the required datasets based on the model
 """
-# %%
 file_path = f'{inputPath}/{dataType}/{dataSubType}/train.pkl'
 with open(file_path, 'rb') as file:
     dataTrain = pickle.load(file)
@@ -79,30 +78,12 @@ test_loader_glass_all =     DataLoader(dataTest_glass_all,   batch_size = batch_
 test_loader_glass_human =   DataLoader(dataTest_glass_human, batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
 
 
-# data = next(iter(comb_test_loader))
-# ids, inputs, labels = data
-# print(ids)
-# print(labels)
-# print(len(inputs))
 
-
-# %%
 """
 Loading the model instance onto GPU
 """
 model = MyModel().to(device)
-
-# # %%
-# total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-# print(f"Total trainable parameters: {total_params}")
-
-
-# print("Initial weights:")
-# for name, param in model.named_parameters():
-#     if param.requires_grad:
-#         print(name, param.data)
-
-# %%                  
+                
 
 """
 Setting all file paths to save information
@@ -133,18 +114,10 @@ model, train_list, val_list, best_epoch, best_val_acc, loss_train, loss_val, acc
 
 
 
-# # %%
-# # print("Final Weights: ")
-# # for name, param in model.named_parameters():
-# #         if param.requires_grad:
-# #             print(name, param.data)
 
-
-# %%
 print(f"{outputDir} best epoch:", best_epoch)
 print(f"{outputDir} best val acc:", best_val_acc)
 
-# %%
 
 """
 Making plots
@@ -156,7 +129,6 @@ plt.savefig(f'../figures/{outputDir}/Loss Curve.pdf', format="pdf", bbox_inches=
 plt.legend()
 plt.show()
 
-# %%
 plt.plot(acc_train, label = "Train Acc",color='red')
 plt.plot(acc_val, label = "Val Acc",color='green')
 plt.title("Accuracy Curve")
@@ -164,13 +136,12 @@ plt.savefig(f'../figures/{outputDir}/Accuracy Curve.pdf', format="pdf", bbox_inc
 plt.legend()
 plt.show()
 
-# %%
 
 """
 First load the model with best weights
-Performing testing on whatever dataset as neededed
+Performing testing on whatever dataset as needed
 """
-# best_epoch = 1
+
 model.load_state_dict(torch.load(f"{weights_file_path}/epoch_{best_epoch}.pt"))
 model.eval()
 
@@ -181,24 +152,6 @@ _, _, _ = testModel(model, test_loader_evolf_all,   test_text_file_path, test_ke
 _, _, _ = testModel(model, test_loader_evolf_human, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'evolf_human_test')
 _, _, _ = testModel(model, test_loader_glass_all,   test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'glass_all_test')
 _, _, _ = testModel(model, test_loader_glass_human, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'glass_human_test')
-
-
-# Calibration Plot
-df = pd.read_csv(f'{test_text_file_path}{outputDir}_test.csv')
-
-y_probs = df['P1'].values
-y_test = df['Actual Label'].values
-
-prob_true, prob_pred = calibration_curve(y_test, y_probs, n_bins=10)
-
-# Plotting the calibration curve
-plt.plot(prob_pred, prob_true, marker='o', linestyle='-', color='b')
-plt.plot([0, 1], [0, 1], linestyle='--', color='gray')  # Diagonal line for reference
-plt.xlabel('Mean Predicted Probability')
-plt.ylabel('Fraction of Positives')
-plt.title('Calibration Plot')
-plt.savefig(f'../figures/{outputDir}/Calibration Curve.pdf', format="pdf", bbox_inches="tight") 
-plt.show()
 
 
 print(f'Code end time:', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
