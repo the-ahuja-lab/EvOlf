@@ -142,9 +142,9 @@ plt.show()
 
 """
 First load the model with best weights
-Performing testing on whatever dataset as neededed
+Performing testing on whatever dataset as needed
 """
-# best_epoch = 1
+
 model.load_state_dict(torch.load(f"{weights_file_path}/epoch_{best_epoch}.pt"))
 model.eval()
 
