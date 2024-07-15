@@ -34,7 +34,6 @@ print(f'Code start time:', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
 """
 Loading all the required datasets based on the model
 """
-# %%
 file_path = f'{inputPath}/{dataType}/{dataSubType}/train.pkl'
 with open(file_path, 'rb') as file:
     dataTrain = pickle.load(file)
@@ -130,7 +129,6 @@ plt.savefig(f'../figures/{outputDir}/Loss Curve.pdf', format="pdf", bbox_inches=
 plt.legend()
 plt.show()
 
-# %%
 plt.plot(acc_train, label = "Train Acc",color='red')
 plt.plot(acc_val, label = "Val Acc",color='green')
 plt.title("Accuracy Curve")
@@ -138,7 +136,6 @@ plt.savefig(f'../figures/{outputDir}/Accuracy Curve.pdf', format="pdf", bbox_inc
 plt.legend()
 plt.show()
 
-# %%
 
 """
 First load the model with best weights
