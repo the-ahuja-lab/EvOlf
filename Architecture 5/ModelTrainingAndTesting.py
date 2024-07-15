@@ -27,10 +27,6 @@ dataSubType = "all" # all, human
 outputDir = f'{dataType}_{dataSubType}'
 inputPath = f'../../../../all_data/processedData/MainModel/SingleDataset'
 
-# Get the local time
-st = time.time()
-print(f'Code start time:', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
-
 """
 Loading all the required datasets based on the model
 """
@@ -46,37 +42,10 @@ file_path = f'{inputPath}/{dataType}/{dataSubType}/comb_all_test.pkl'
 with open(file_path, 'rb') as file:
     dataTest_comb_all = pickle.load(file)
 
-file_path = f'{inputPath}/{dataType}/{dataSubType}/comb_human_test.pkl'
-with open(file_path, 'rb') as file:
-    dataTest_comb_human = pickle.load(file)
 
-file_path = f'{inputPath}/{dataType}/{dataSubType}/evolf_all_test.pkl'
-with open(file_path, 'rb') as file:
-    dataTest_evolf_all = pickle.load(file)
-
-file_path = f'{inputPath}/{dataType}/{dataSubType}/evolf_human_test.pkl'
-with open(file_path, 'rb') as file:
-    dataTest_evolf_human = pickle.load(file)
-
-file_path = f'{inputPath}/{dataType}/{dataSubType}/glass_all_test.pkl'
-with open(file_path, 'rb') as file:
-    dataTest_glass_all = pickle.load(file)
-
-file_path = f'{inputPath}/{dataType}/{dataSubType}/glass_human_test.pkl'
-with open(file_path, 'rb') as file:
-    dataTest_glass_human = pickle.load(file)
-
-
-train_loader =  DataLoader(dataTrain,   batch_size = batch_size, shuffle=True, worker_init_fn=worker_init_fn) 
-val_loader =    DataLoader(dataVal,     batch_size = batch_size, shuffle=True, worker_init_fn=worker_init_fn) 
-
-test_loader_comb_all =      DataLoader(dataTest_comb_all,    batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
-test_loader_comb_human =    DataLoader(dataTest_comb_human,  batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
-test_loader_evolf_all =     DataLoader(dataTest_evolf_all,   batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
-test_loader_evolf_human =   DataLoader(dataTest_evolf_human, batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
-test_loader_glass_all =     DataLoader(dataTest_glass_all,   batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
-test_loader_glass_human =   DataLoader(dataTest_glass_human, batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
-
+train_loader =  DataLoader(dataTrain, batch_size = batch_size, shuffle=True, worker_init_fn=worker_init_fn) 
+val_loader = DataLoader(dataVal, batch_size = batch_size, shuffle=True, worker_init_fn=worker_init_fn) 
+test_loader_comb_all =  DataLoader(dataTest_comb_all, batch_size = batch_size, shuffle=False, worker_init_fn=worker_init_fn)
 
 
 """
@@ -138,7 +107,7 @@ plt.show()
 
 
 """
-First load the model with best weights
+First, load the model with the best weights
 Performing testing on whatever dataset as needed
 """
 
@@ -146,12 +115,4 @@ model.load_state_dict(torch.load(f"{weights_file_path}/epoch_{best_epoch}.pt"))
 model.eval()
 
 
-_, _, _ = testModel(model, test_loader_comb_all,    test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'comb_all_test')
-_, _, _ = testModel(model, test_loader_comb_human,  test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'comb_human_test')
-_, _, _ = testModel(model, test_loader_evolf_all,   test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'evolf_all_test')
-_, _, _ = testModel(model, test_loader_evolf_human, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'evolf_human_test')
-_, _, _ = testModel(model, test_loader_glass_all,   test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'glass_all_test')
-_, _, _ = testModel(model, test_loader_glass_human, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'glass_human_test')
-
-
-print(f'Code end time:', time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+_, _, _ = testModel(model, test_loader_comb_all, test_text_file_path, test_key_embedding_file_path, test_lock_embedding_file_path, test_concat_embedding_file_path, 'comb_all_test')
