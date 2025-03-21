@@ -1,4 +1,8 @@
 # EvOlf
+<div align="center">
+<img src="image.png"></div>
+<br>
+
 <!--- BADGES --->
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zou-group/TextGrad/blob/main/examples/notebooks/Prompt-Optimization.ipynb)
 <!--- Update colab path --->
