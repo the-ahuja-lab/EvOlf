@@ -1,6 +1,6 @@
 # EvOlf
 <div align="center">
-<img src="image.png"></div>
+<img src="EvOlf.png"></div>
 <br>
 
 <!--- BADGES --->
