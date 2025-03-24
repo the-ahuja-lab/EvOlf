@@ -10,11 +10,13 @@
 <!--- ADD Paper when published --->
 
 EvOlf is a cutting-edge deep-learning framework designed to predict ligand-GPCR interactions, integrating odorant and non-odorant GPCRs across 24 species. Using advanced modeling techniques, it enables accurate predictions and GPCR deorphanization. <br><br>
-Want to see it in action? We’ve provided a Google Colab notebook so you can easily run predictions on your own data! 🚀
+Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io/EvOlf) where you can browse the complete EvOlf dataset of ligand-receptor interactions used in training and validation. <br><br>
+Want to see EvOlf in action? We've provided a Google Colab notebook so you can easily run predictions on your own data! 🚀
 <br>
-<br>
+
 👉 [EvOlf Colab Notebook](https://pages.github.com/)
 <!--- Update colab path --->
+<br>
 
 ## Get Started
 Ready to dive in? First, clone this repository to your chosen location:
@@ -24,18 +26,26 @@ git clone https://github.com/the-ahuja-lab/EvOlf.git
 Here's a key thing to remember: Your working directory is the folder where you cloned EvOlf, not EvOlf itself! For example, if you clone EvOlf inside a folder called `MyProjects`, then `MyProjects` is your working directory.
 
 ---
+<br>
 
 ### 📄 Preparing Your Input Data 
 
 Before you unleash EvOlf’s predictive power, make sure your input data is formatted correctly! Each row should represent a single ligand-receptor interaction and must include:  
 
-- **SMILES** ⌬ – The molecular representation of the ligand.  
-- **Receptor Sequence** 🪢 – The amino acid sequence of the GPCR.  
+1. **SMILES** ⌬ – The molecular representation of the ligand.    
+  **Important Note on SMILES Format** <br> 
+  For optimal prediction accuracy, we strongly recommend converting your ligand SMILES to canonical SMILES format using OpenBabel before running EvOlf. This standardization ensures consistency in molecular representation    and significantly improves model performance.
+    ```bash
+    # Example of converting to canonical SMILES using OpenBabel
+    obabel -ismi input.smi -ocan -O out.smi
+    ```
+3. **Receptor Sequence** 🪢 – The amino acid sequence of the GPCR.
 
 To keep things organized, you can provide your own **unique identifiers** for ligands, receptors, and ligand-receptor pairs, or if you prefer, EvOlf can generate them for you automatically. 
 Let’s go through both options! 🚀
 
 ---
+<br> 
 
 #### 📝 Simplest Format: No IDs Required!
 If manually assigning identifiers sounds like a hassle, you can skip them entirely! Just provide a CSV file with only ligand SMILES and receptor sequences, and EvOlf will automatically generate the necessary IDs for you.
@@ -52,6 +62,8 @@ If manually assigning identifiers sounds like a hassle, you can skip them entire
 When using this format, EvOlf will generate a file called `Input_ID_Information.csv` in the output directory, which contains automatically assigned Ligand IDs, Receptor IDs, and Ligand-Receptor Pair IDs.
 
 ---
+<br> 
+
 #### 📝 Provide Unique Identifiers
 If you prefer more control over your data, you can provide custom unique IDs for ligands, receptors, and ligand-receptor pairs. This helps keep your dataset structured and makes it easier to track specific interactions.
 
@@ -73,6 +85,7 @@ This is exactly how your data should be structured:
 This structure ensures EvOlf correctly maps interactions without confusion or redundancy.
 
 ---
+<br>
 
 #### ❌ Common Mistakes to Avoid <br>
 Providing incorrect or inconsistent identifiers can cause errors in prediction. Below is an example of what NOT to do:
@@ -96,11 +109,13 @@ Bad Input Data Example
 Data like this will break EvOlf’s ability to correctly associate ligands and receptors!
 
 ---
+<br>
 
 🛠 **Let EvOlf Handle the IDs!** <br>
 If you don't want to manually assign identifiers. Just provide a CSV with ligand SMILES and receptor sequences, and EvOlf will take care of the rest. The assigned IDs will be available in the `Input_ID_Information.csv` file in the output directory.
 
 ---
+<br>
 
 #### 🎯 Key Takeaways
 ✔ Option 1: Provide only SMILES and Receptor Sequences, and let EvOlf handle the rest. <br> 
@@ -108,7 +123,7 @@ If you don't want to manually assign identifiers. Just provide a CSV with ligand
 ✔ Make sure all IDs are unique to avoid errors in predictions. <br> 
 ✔ If you skip IDs, check `Input_ID_Information.csv` for automatically assigned identifiers. <br> 
 
-Now you’re all set to get your predictions 🔎! 
+Now you’re all set to get your predictions!🔎 <br> <br>
 
 
 ## 📂 Output Files 
