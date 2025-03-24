@@ -9,12 +9,6 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-grey?style=flat&labelColor=white&logo=RStudio&logoColor=white)](https://github.com/the-ahuja-lab/EvOlf)
 <!--- Update colab path --->
 <!--- ADD Paper when published --->
-EvOlf is a cutting-edge deep-learning framework designed to predict ligand-GPCR interactions, integrating odorant and non-odorant GPCRs across 24 species. Using advanced modeling techniques, it enables accurate predictions and GPCR deorphanization. <br><br>
-Check out our complete codebase on [GitHub](https://github.com/the-ahuja-lab/EvOlf) to access the full framework and implementation details. <br><br>
-Want to see EvOlf in action? We've provided a Google Colab notebook, `EvOlf_Predictions_Colab.ipynb`, so you can easily run predictions on your own data. Download the notebook and start exploring!  🚀
-<br>
-
-
 
 EvOlf is a cutting-edge deep-learning framework designed to predict ligand-GPCR interactions, integrating odorant and non-odorant GPCRs across 24 species. Using advanced modeling techniques, it enables accurate predictions and GPCR deorphanization. <br><br>
 Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io/EvOlf), where you can browse the complete EvOlf dataset of ligand-receptor interactions used in training and validation. <br><br>
