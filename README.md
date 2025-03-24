@@ -117,7 +117,7 @@ After running the Colab notebook, EvOlf generates several output files. Each one
 📌 **What it contains**: <br>
 Unique IDs assigned to each ligand, receptor, and ligand-receptor pair. <br> 
 Information on any pairs that were not processed. <br> 
-💡 **Why it matters***: This file helps track how your inputs were mapped and ensures all IDs are assigned correctly. <br>
+💡 **Why it matters**: This file helps track how your inputs were mapped and ensures all IDs are assigned correctly. <br>
 
 ✅ Example of `Input_ID_Information.csv`:
 |SrNum|IDs|Ligand_ID|SMILES|Receptor_ID|Sequence|ProcessingStatus|
