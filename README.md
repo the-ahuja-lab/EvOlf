@@ -5,7 +5,7 @@
 
 <!--- BADGES --->
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zou-group/TextGrad/blob/main/examples/notebooks/Prompt-Optimization.ipynb)
-[![Shiny Database](https://img.shields.io/badge/Shiny-shinyapps.io-blue?style=flat&labelColor=white&logo=RStudio&logoColor=blue)](https://the-ahuja-lab.shinyapps.io/EvOlf)
+[![Shiny Database](https://img.shields.io/badge/Shiny-Database-blue?style=flat&labelColor=white&logo=RStudio&logoColor=blue)](https://the-ahuja-lab.shinyapps.io/EvOlf)
 <!--- Update colab path --->
 <!--- ADD Paper when published --->
 
@@ -108,7 +108,7 @@ If you don't want to manually assign identifiers. Just provide a CSV with ligand
 ✔ Make sure all IDs are unique to avoid errors in predictions. <br> 
 ✔ If you skip IDs, check `Input_ID_Information.csv` for automatically assigned identifiers. <br> 
 
-Now you’re all set 
+Now you’re all set to get your predictions 🔎! 
 
 
 ## 📂 Output Files 
@@ -146,7 +146,7 @@ Combined ligand-receptor pair embeddings. <br>
 
 5️⃣ Prediction_Output.csv <br>
 📌 **What it contains**: <br>
-The final predictions made by EvOlf, including interaction labels (0 or 1) and confidence scores. <br>
+The final predictions made by EvOlf include interaction labels (0 or 1) and confidence scores. <br>
 💡 **Why it matters**: This file tells you which ligand-receptor pairs are predicted to interact and with what level of confidence.
 
 ✅ Example of `Prediction_Output.csv`:
