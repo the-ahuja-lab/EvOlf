@@ -4,14 +4,14 @@
 <br>
 
 <!--- BADGES --->
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zou-group/TextGrad/blob/main/examples/notebooks/Prompt-Optimization.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](EvOlf_Predictions_Colab.ipynb)
 [![Shiny Database](https://img.shields.io/badge/Shiny-Database-blue?style=flat&labelColor=white&logo=RStudio&logoColor=blue)](https://the-ahuja-lab.shinyapps.io/EvOlf)
 <!--- Update colab path --->
 <!--- ADD Paper when published --->
 
 EvOlf is a cutting-edge deep-learning framework designed to predict ligand-GPCR interactions, integrating odorant and non-odorant GPCRs across 24 species. Using advanced modeling techniques, it enables accurate predictions and GPCR deorphanization. <br><br>
-Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io/EvOlf) where you can browse the complete EvOlf dataset of ligand-receptor interactions used in training and validation. <br><br>
-Want to see EvOlf in action? We've provided a Google Colab notebook so you can easily run predictions on your own data! 🚀
+Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io/EvOlf), where you can browse the complete EvOlf dataset of ligand-receptor interactions used in training and validation. <br><br>
+Want to see EvOlf in action? We've provided a Google Colab notebook, `EvOlf_Predictions_Colab.ipynb`, so you can easily run predictions on your own data. Download the notebook and start exploring!  🚀
 <br>
 
 👉 [EvOlf Colab Notebook](EvOlf_Predictions_Colab.ipynb)
@@ -33,12 +33,12 @@ Here's a key thing to remember: Your working directory is the folder where you c
 Before you unleash EvOlf’s predictive power, make sure your input data is formatted correctly! Each row should represent a single ligand-receptor interaction and must include:  
 
 1. **SMILES** ⌬ – The molecular representation of the ligand.    
-  **Important Note on SMILES Format** <br> 
-  For optimal prediction accuracy, we strongly recommend converting your ligand SMILES to canonical SMILES format using OpenBabel before running EvOlf. This standardization ensures consistency in molecular representation    and significantly improves model performance.
-    ```bash
-    # Example of converting to canonical SMILES using OpenBabel
-    obabel -ismi input.smi -ocan -O out.smi
-    ```
+    - **Important Note on SMILES Format** <br> 
+      For optimal prediction accuracy, we strongly recommend converting your ligand SMILES to canonical SMILES format using OpenBabel before running EvOlf. This standardization ensures consistency in molecular representation    and significantly improves model performance.
+      ```bash
+      # Example of converting to canonical SMILES using OpenBabel
+      obabel -ismi input.smi -ocan -O out.smi
+      ```
 3. **Receptor Sequence** 🪢 – The amino acid sequence of the GPCR.
 
 To keep things organized, you can provide your own **unique identifiers** for ligands, receptors, and ligand-receptor pairs, or if you prefer, EvOlf can generate them for you automatically. 
