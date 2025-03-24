@@ -5,9 +5,7 @@
 
 <!--- BADGES --->
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](EvOlf_Predictions_Colab.ipynb)
-[![Shiny Database](https://img.shields.io/badge/Shiny-Database-blue?style=flat&labelColor=white&logo=RStudio&logoColor=blue)](https://the-ahuja-lab.shinyapps.io/EvOlf)
 [![Shiny Database](https://img.shields.io/badge/Shiny-Database-blue?style=flat&labelColor=white&logo=rstudioide&logoColor=blue)](https://the-ahuja-lab.shinyapps.io/EvOlf/)
-
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-grey?style=flat&labelColor=white&logo=RStudio&logoColor=white)](https://github.com/the-ahuja-lab/EvOlf)
 <!--- Update colab path --->
 <!--- ADD Paper when published --->
