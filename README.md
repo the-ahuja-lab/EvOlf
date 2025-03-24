@@ -1,4 +1,4 @@
-# EvOlf
+# EvOlf: Evolutionary-Guided Advanced Deep Learning Architecture Powers Mammalian GPCRome Agonist Predictions
 <div align="center">
 <img src="EvOlf.png", width=600></div>
 <br>
