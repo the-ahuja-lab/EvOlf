@@ -14,7 +14,7 @@ Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io
 Want to see EvOlf in action? We've provided a Google Colab notebook so you can easily run predictions on your own data! 🚀
 <br>
 
-👉 [EvOlf Colab Notebook](https://pages.github.com/)
+👉 [EvOlf Colab Notebook](EvOlf_Predictions_Colab.ipynb)
 <!--- Update colab path --->
 <br>
 
