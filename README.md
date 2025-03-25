@@ -16,6 +16,14 @@ Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io
 Want to see EvOlf in action? We've provided a Google Colab notebook, `EvOlf_Predictions_Colab.ipynb`, so you can easily run predictions on your own data. Download the notebook and start exploring!  🚀
 <br>
 
+We’ve made it easy for you to run predictions on your own data with our Google Colab notebook: EvOlf_Predictions_Colab.ipynb. You have three ways to get started:
+
+1️⃣ Download the Notebook – Grab the file and upload it to Google Colab for the best UI experience.
+2️⃣ Open in Colab (Easiest Option!) – Just click the link to open the notebook directly in Colab. You'll just need to make a copy before running any code—quick and hassle-free!
+3️⃣ Download from GitHub – Get the latest version directly from our GitHub repository.
+
+👉 [Download the Notebook](https://drive.google.com/uc?export=download&id=1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt) | [Open in Colab](https://colab.research.google.com/drive/1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt?usp=sharing) | [Get it on GitHub](EvOlf_Predictions_Colab.ipynb)
+
 👉 [EvOlf Colab Notebook](EvOlf_Predictions_Colab.ipynb)
 <!--- Update colab path --->
 <br>
