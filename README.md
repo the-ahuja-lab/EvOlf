@@ -13,19 +13,14 @@
 
 EvOlf is a cutting-edge deep-learning framework designed to predict ligand-GPCR interactions, integrating odorant and non-odorant GPCRs across 24 species. Using advanced modeling techniques, it enables accurate predictions and GPCR deorphanization. <br><br>
 Explore our work through our [Shiny Database](https://the-ahuja-lab.shinyapps.io/EvOlf), where you can browse the complete EvOlf dataset of ligand-receptor interactions used in training and validation. <br><br>
-Want to see EvOlf in action? We've provided a Google Colab notebook, `EvOlf_Predictions_Colab.ipynb`, so you can easily run predictions on your own data. Download the notebook and start exploring!  🚀
-<br>
+Want to see EvOlf in action? We’ve made it easy for you to run predictions on your own data with our Google Colab notebook: `EvOlf_Predictions_Colab.ipynb`. You have three ways to get started:
 
-We’ve made it easy for you to run predictions on your own data with our Google Colab notebook: EvOlf_Predictions_Colab.ipynb. You have three ways to get started:
-
-1️⃣ Download the Notebook – Grab the file and upload it to Google Colab for the best UI experience.
-2️⃣ Open in Colab (Easiest Option!) – Just click the link to open the notebook directly in Colab. You'll just need to make a copy before running any code—quick and hassle-free!
-3️⃣ Download from GitHub – Get the latest version directly from our GitHub repository.
+1️⃣ **Download the Notebook** - Grab the file and upload it to Google Colab for the best UI experience. <br> 
+2️⃣ **Open in Colab (Easiest Option!)** - Just click the link to open the notebook directly in Colab. You'll just need to make a copy before running any code - quick and hassle-free! <br> 
+3️⃣ **Download from GitHub** - Get the latest version directly from our GitHub repository.  <br> 
 
 👉 [Download the Notebook](https://drive.google.com/uc?export=download&id=1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt) | [Open in Colab](https://colab.research.google.com/drive/1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt?usp=sharing) | [Get it on GitHub](EvOlf_Predictions_Colab.ipynb)
 
-👉 [EvOlf Colab Notebook](EvOlf_Predictions_Colab.ipynb)
-<!--- Update colab path --->
 <br>
 
 ## Get Started
