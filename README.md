@@ -4,8 +4,8 @@
 <br>
 
 <!--- BADGES --->
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([https://drive.google.com/uc?export=download&id=1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt](https://colab.research.google.com/drive/1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt?usp=sharing))
-[![Colab Download](https://img.shields.io/badge/_-Download_Colab-blue?style=flat&labelColor=grey&logo=googlecolab&logoColor=#F9AB00)]([https://drive.google.com/uc?export=download&id=1bq0ERtrEbCnM41emANqjK_TT9tTUC2_k](https://drive.google.com/uc?export=download&id=1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt))
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt?usp=sharing))
+[![Colab Download](https://img.shields.io/badge/_-Download_Colab-blue?style=flat&labelColor=grey&logo=googlecolab&logoColor=#F9AB00)](https://drive.google.com/uc?export=download&id=1qTmiELb_6tsbV7xuU1IcY-cAZSlWAIrt)
 [![Shiny Database](https://img.shields.io/badge/Shiny-Database-blue?style=flat&labelColor=white&logo=rstudioide&logoColor=blue)](https://the-ahuja-lab.shinyapps.io/EvOlf/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-grey?style=flat&labelColor=black&logo=github&logoColor=#181717)](https://github.com/the-ahuja-lab/EvOlf/)
 <!--- Update colab path --->
