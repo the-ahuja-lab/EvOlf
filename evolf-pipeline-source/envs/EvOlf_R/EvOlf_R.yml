@@ -1,0 +1,10 @@
+name: evolfr_env
+channel:
+    - conda-forge
+dependencies:
+    - r-base
+    - r-dplyr
+    - r-purrr
+    - r-protr
+    - r-stringr
+    - r-readr

@@ -1,0 +1,4 @@
+inputFile,ligandSmiles,receptorSequence,ligandID,receptorID,lrID
+/16Tbdrive1/evolf/evolf_pipeline/EvOlf_Input.csv,SMILES,Mutated_Sequence,Temp_Ligand_ID,TempRecID,ID
+/16Tbdrive1/evolf/evolf_pipeline/EvOlf_Batch1.csv,smiles,Sequence,Ligand_ID,RecID,rel_ID
+/16Tbdrive1/evolf/evolf_pipeline/EvOlf_Batch2.csv,smile_sequences,Receptor_Sequences,lig_id,receptor_ids,test_ids

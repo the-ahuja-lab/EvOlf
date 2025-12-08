@@ -1,0 +1,19 @@
+name: Mol2Vec
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pip
+  - conda-forge::fastapi
+  - uvicorn
+  - numpy
+  - matplotlib
+  - seaborn
+  - pandas
+  - ipython
+  - rdkit
+  - scikit-learn
+  - gensim
+  - tqdm
+  - joblib
