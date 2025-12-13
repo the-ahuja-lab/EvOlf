@@ -4,6 +4,7 @@
 <br>
 
 <!--- BADGES --->
+[![Web Server](https://img.shields.io/badge/EvOlf-Web_Server-red?style=flat&labelColor=black)](https://evolf.ahujalab.iiitd.edu.in/)
 [![GitHub](https://img.shields.io/badge/GitHub-EvOlf_Source_Code-blue?style=flat&labelColor=black&logo=github&logoColor=#181717)](https://github.com/the-ahuja-lab/EvOlf/)
 [![GitHub](https://img.shields.io/badge/GitHub-EvOlf_Pipeline-green?style=flat&labelColor=black&logo=github&logoColor=#181717)](https://github.com/the-ahuja-lab/evolf-pipeline/)
 <!--- Update colab path --->
