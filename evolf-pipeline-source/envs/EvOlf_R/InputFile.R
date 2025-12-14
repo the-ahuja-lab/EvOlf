@@ -6,6 +6,17 @@ run_input_prep <- function(inputFile,
                            ligSmilesColumn, recSeqColumn, 
                            ligID, recID, lrID) {
 
+    # Handle null inputs for optional columns
+    if (!is.null(ligID) && (ligID == "null" || ligID == "NULL" || ligID == "NA" || ligID == "")) {
+        ligID <- NULL
+    }
+    if (!is.null(recID) && (recID == "null" || recID == "NULL" || recID == "NA" || recID == "")) {
+        recID <- NULL
+    }
+    if (!is.null(lrID) && (lrID == "null" || lrID == "NULL" || lrID == "NA" || lrID == "")) {
+        lrID <- NULL
+    }
+
     # take input file from user
     mainData <- read.csv(inputFile)
     # add serial numbers to help in sorting

@@ -22,7 +22,7 @@ Want to see EvOlf in action? We’ve made it easy for you to run predictions on 
 
 2️⃣ **Run using Nextflow (Easiest Option!)** - If you want to run EvOlf locally and without restriction, follow the instructions in the [Get Started](#get-started) section. After initial setup, you'll be able to run the EvOlf model - quick and hassle-free! <br> 
 
-👉 [Run on Server](https://evolf.ahujalab.iiitd.edu.in/prediction) | [Run using Nextflow](https://github.com/the-ahuja-lab/evolf-pipeline) | [Look at the source code](https://github.com/the-ahuja-lab/evolf-pipeline-source)
+👉 [Run on Server](https://evolf.ahujalab.iiitd.edu.in/prediction) | [Run using Nextflow](https://github.com/the-ahuja-lab/EvOlf/tree/main/evolf-pipeline-source) | [Look at the source code](https://github.com/the-ahuja-lab/EvOlf)
 
 <br>
 
@@ -51,7 +51,7 @@ Before you unleash EvOlf’s predictive power, make sure your input data is form
       # Example of converting to canonical SMILES using OpenBabel
       obabel -ismi input.smi -ocan -O out.smi
       ```
-3. **Receptor Sequence** 🪢 – The amino acid sequence of the GPCR.
+2. **Receptor Sequence** 🪢 – The amino acid sequence of the GPCR.
 
 To keep things organised, you can provide your own **unique identifiers** for ligands, receptors, and ligand-receptor pairs, or if you prefer, EvOlf can generate them for you automatically. 
 Let’s go through both options! 🚀
@@ -193,7 +193,7 @@ The Nextflow pipeline is limited to utilising 4 CPU cores and 16GB RAM by defaul
 - `--maxMemory` to set the maximum amount of RAM the EvOlf pipeline can use.
 
 > [!NOTE]
-> For detailed documentation on all the options and profiles built into the EvOlf pipeline. Kindly visit its GitHub repo at [the-ahuja-lab/evolf-pipeline](https://www.github.com/the-ahuja-lab/evolf-pipeline)
+> For detailed documentation on all the options and profiles built into the EvOlf pipeline. Kindly look at README at [evolf-pipeline-source](https://github.com/the-ahuja-lab/EvOlf/tree/main/evolf-pipeline-source) directory.
 
 ## 📂 Output Files 
 After running the pipeline, the EvOlf pipeline generates a separate folder for each input file in your output directory, with the following structure.
@@ -252,3 +252,10 @@ The final predictions made by EvOlf include interaction labels (0 or 1) and conf
 |LR3|0|0.00170087465085089|
 |LR4|0|0.000176260960870422|
 |LR5|0|0.12915557622909546|
+
+## Related Links
+
+  * **EvOlf Webserver:** [http://evolf.ahujalab.iiitd.edu.in/](http://evolf.ahujalab.iiitd.edu.in/)
+  * **Docker Images:** All the container images used by EvOlf Pipeline are hosted on DockerHub at [ahujalab](https://hub.docker.com/u/ahujalab).
+  * **Source Code, Development & Training Code (This Repo):** [EvOlf](https://www.google.com/search?q=https://github.com/the-ahuja-lab/EvOlf)
+
