@@ -269,7 +269,38 @@ results/
 │       ├── execution_report.html              <-- Resource usage (RAM/CPU)
 │       └── execution_timeline.html            <-- Gantt chart of jobs
 ```
+### The Prediction File (`Prediction_Output.csv`)
 
+| Column | Description |
+| :--- | :--- |
+| `ID` | The unique Pair ID (User-provided or auto-generated `LR1`). |
+| `Predicted Label` | **1** (Interaction) or **0** (No Interaction). Threshold is 0.5. |
+| `P1` | The raw **probability score** (0.0 to 1.0). Higher = stronger interaction confidence. |
+
+-----
+
+## Configuration & Tuning
+
+### Hardware Profiles (`-profile`)
+
+  * **`docker`**: Uses Docker. Runs as the current user (`-u $(id -u)`) to prevent root-owned file issues.
+  * **`apptainer` / `singularity`**: Uses `.sif` images. Automatically mounts your project directory.
+  * **`gpu`**: **Highly Recommended.** Enables CUDA for ChemBERTa, ProtBERT, ProtT5, and the Prediction model. Without this, the pipeline will run on CPU (which is much slower).
+
+### Model Caching
+
+The first time you run EvOlf, it will download \~15GB of model weights (Hugging Face transformers).
+
+  * **Location:** These are stored in `~/.evolf_cache` in your home directory.
+  * **Benefit:** They are downloaded **only once**. All subsequent runs (even in different project folders) will use this centralised cache.
+
+### Resource Management
+
+The Nextflow pipeline utilises 4 CPU cores and 16GB of RAM by default. You can change these defaults by providing the following parameters along with input:
+- `--maxCPUs` to set the maximum number of CPU cores NextFlow can utilise to run EvOlf.
+- `--maxMemory` to set the maximum amount of RAM the EvOlf pipeline can use.
+
+-----
 
 ## Development & Customization
 
