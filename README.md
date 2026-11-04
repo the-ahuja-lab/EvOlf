@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="branding/banner.svg" alt="EvOlf — Evolution-Guided Ligand–GPCR Prediction" width="100%">
-</p>
 
 > **Recognising molecular interactions across the mammalian GPCRome.** EvOlf is an
 > evolution-guided deep learning framework for predicting ligand–GPCR interactions and
